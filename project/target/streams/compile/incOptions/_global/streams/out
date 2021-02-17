@@ -1,0 +1,2 @@
+[debug] Created transactional ClassFileManager with tempDir = /Users/vasusurani/IdeaProjects/bixi_data_kafka/project/target/scala-2.12/sbt-1.0/classes.bak
+[debug] Removing the temporary directory used for backing up class files: /Users/vasusurani/IdeaProjects/bixi_data_kafka/project/target/scala-2.12/sbt-1.0/classes.bak
