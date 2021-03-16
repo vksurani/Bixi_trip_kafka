@@ -1,3 +1,10 @@
-[debug] downloaded https://repo1.maven.org/maven2/au/com/bytecode/opencsv/2.4/opencsv-2.4.jar
-[debug] downloaded https://repo1.maven.org/maven2/au/com/bytecode/opencsv/2.4/opencsv-2.4-sources.jar
-[debug] downloaded https://repo1.maven.org/maven2/au/com/bytecode/opencsv/2.4/opencsv-2.4-javadoc.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.pom
+[debug] downloaded https://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-base/2.9.8/jackson-base-2.9.8.pom
+[debug] downloaded https://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-bom/2.9.8/jackson-bom-2.9.8.pom
+[debug] downloaded https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.pom
+[debug] downloaded https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8-javadoc.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8-sources.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8-sources.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8-javadoc.jar
