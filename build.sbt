@@ -15,13 +15,9 @@ libraryDependencies += "org.apache.kafka" % "kafka-clients" % "2.5.0"
 libraryDependencies += "org.apache.hadoop" % "hadoop-common" % hadoopVersion
 libraryDependencies += "org.apache.hadoop" % "hadoop-hdfs" % hadoopVersion
 libraryDependencies += "au.com.bytecode" % "opencsv" % "2.4"
-// https://mvnrepository.com/artifact/org.apache.spark/spark-core
 libraryDependencies += "org.apache.spark" %% "spark-core" % sparkVersion
-// https://mvnrepository.com/artifact/org.apache.spark/spark-sql
 libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion
-// https://mvnrepository.com/artifact/org.apache.spark/spark-streaming
 libraryDependencies += "org.apache.spark" %% "spark-streaming" % sparkVersion
-// https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka-0-10
 libraryDependencies += "org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkVersion
 libraryDependencies += "io.confluent" % "kafka-schema-registry-client" % ConfluentVersion
 libraryDependencies += "io.confluent" % "kafka-avro-serializer" % ConfluentVersion

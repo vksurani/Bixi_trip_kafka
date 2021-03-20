@@ -29,11 +29,9 @@ object RegisterSchema extends App {
       |]}""".stripMargin
   ).mkString
 
-  // 2. Parse schema
   val avroParser = new Schema.Parser().parse(Trip)
 
-  // 3. Create a client
-  val srClient = new CachedSchemaRegistryClient("http://172.16.129.87:8081", 1)
-  srClient.register("enriched_trip-vasu", avroParser)
+  val srClient = new CachedSchemaRegistryClient("http://172.16.129.58:8081", 1)
+  srClient.register("winter2020_vasu_enriched_trip-value", avroParser)
 
 }

@@ -1,6 +1,5 @@
 package com.ca.mcit.sprint3
 
-import io.confluent.kafka.schemaregistry.client.CachedSchemaRegistryClient
 import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord}
 import org.apache.kafka.common.serialization.{IntegerDeserializer, StringDeserializer}
 import org.apache.spark.rdd.RDD
@@ -16,9 +15,6 @@ object SparkEnrichment {
   def main(args: Array[String]): Unit = {
     processKafkaStream
   }
-  val srClient = new CachedSchemaRegistryClient("http://172.16.129.87:8081",1)
-  val metadata = srClient.getSchemaMetadata("enriched_trip-value",1)
-  val stationSchema = srClient.getByID(metadata.getId)
 
   def getStationDF: DataFrame = {
     val spark = SparkSession.builder()
@@ -27,13 +23,13 @@ object SparkEnrichment {
       .getOrCreate()
 
     val enrichedStationDf: DataFrame = spark.read.option("header", "true").option("inferschema", "true")
-       .csv("hdfs://quickstart.cloudera:8020/user/winter2020/vasu/finalproject/Enriched/000000_0")
+      .csv("hdfs://quickstart.cloudera:8020/user/winter2020/vasu/finalproject/Enriched/000000_0")
 
     enrichedStationDf.createOrReplaceTempView("enrichedStation")
 
     val stationDf: DataFrame = spark.sql(
-        """SELECT *
-          |FROM enrichedStation""".stripMargin)
+      """SELECT *
+        |FROM enrichedStation""".stripMargin)
 
     stationDf.select(
       col("system_id"),
@@ -46,12 +42,12 @@ object SparkEnrichment {
       col("capacity")
     )
   }
-
+  val conf = new SparkConf().setMaster("local[*]")
+    .setAppName("Spark streaming with Kafka")
+  val sc = new SparkContext(conf)
+  val ssc = new StreamingContext(sc, Seconds(10))
   def processKafkaStream: Unit = {
-    val conf = new SparkConf().setMaster("local[*]")
-      .setAppName("Spark streaming with Kafka")
-    val sc = new SparkContext(conf)
-    val ssc = new StreamingContext(sc, Seconds(10))
+
 
     val kafkaConfig = Map[String, String](
       ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG -> "quickstart.cloudera:9092",
@@ -108,8 +104,7 @@ object SparkEnrichment {
         .option("header", "false")
         .save(path)
 
-      enrichedTrip.show()
+      ssc.stop()
     }
   }
 }
-

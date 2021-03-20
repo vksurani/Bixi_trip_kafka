@@ -11,7 +11,7 @@ object Producer extends App with Main {
 
     val producerProperties = new Properties()
     producerProperties.setProperty(
-      ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092"
+      ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "quickstart.cloudera:9092"
     )
     producerProperties.setProperty(
       ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, classOf[IntegerSerializer].getName
